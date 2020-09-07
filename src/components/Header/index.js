@@ -91,7 +91,10 @@ class Header extends Component {
                     </div>
                 }
                 <div className="Header-mainLogo">
-                    tutaj będzie logo
+                    <div className="Header-mainLogo_text">
+                        <h2>Seahorse</h2>
+                        <h4>CONSULTING</h4> {/* czcionka - Poppins, Arimo, */}
+                    </div>
                 </div>
             </div>
         )
