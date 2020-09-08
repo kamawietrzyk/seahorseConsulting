@@ -1,0 +1,51 @@
+@import '../../utils/media.scss';
+@import '../../utils/colors.scss';
+
+.About {
+    padding: 1rem;
+    margin: 2rem 1rem;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+    "text"
+    "pic";
+    background-color: $paleBlue;
+    border-radius: 7px;
+
+    &-text {
+        grid-area: text;
+        display: grid;
+        justify-content: center;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        margin-top: 1rem;
+
+        & h5 {
+            font-size: 2.5em;
+            color: $lightBlue;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: $laptop) {
+            text-align: left;
+            padding: 2rem 3rem;
+
+            & hr {
+                margin: 0 0 2rem 0;
+            }
+        }
+    }
+
+    & img {
+        grid-area: pic;
+    }
+
+    @media (min-width: $tablet) {
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 2rem;
+        grid-template-areas:
+        "text pic";
+    }
+}

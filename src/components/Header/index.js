@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
 import './styles.scss';
+import logoWhite from './logoWhite.png';
+import logoTeal from './logoTeal.png';
 
 class Header extends Component {
     state = {
@@ -37,7 +39,7 @@ class Header extends Component {
         const tabs = [
             { name: "home", label: "HOME", to: "home" },
             { name: "company", label: "FIRMA", to: "company" },
-            { name: "about", label: "O NAS", to: "about" },
+            { name: "about", label: "O MNIE", to: "about" },
             { name: "opinions", label: "OPINIE", to: "opinions" },
             { name: "contact", label: "KONTAKT", to: "contact" }
         ]
@@ -46,14 +48,13 @@ class Header extends Component {
                 <div className={`Header-navbar ${this.state.position && "white"} ${!this.state.position && this.state.navOpen && "dark"}`}>
                     <div className="Header-navbar__logo">
                         <a href="#home">
-                            {/* <img src={!this.state.position ? bialeLogo : czarneLogo} className={this.state.position && "dark"} alt="Seahorse logo małe" /> */}
-                            małe logo
+                            <img src={!this.state.position ? logoWhite : logoTeal} className={`${this.state.position && "dark"} ${this.state.navOpen && "nav-open"}`} alt="Seahorse logo małe" />
                         </a>
                     </div>
                     <div className="Header-navbar__navigation">
                         <nav className={`navbar navbar-expand-md ${this.state.position && "white"}`}>
                             <button className="navbar-toggler p-1" type="button" onClick={this.toggleBurger} data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                                <span className={`navbar-toggler-icon ${this.state.position ? "dark-icon" : "light-icon"} ${!this.state.position && this.state.navOpen && "blue-icon"}`}></span>
+                                <span className={`navbar-toggler-icon ${this.state.position ? "blue-icon" : "light-icon"} ${this.state.navOpen && "light-icon"}`}></span>
                             </button>
                             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                                 <div className="navbar-nav">
@@ -91,9 +92,10 @@ class Header extends Component {
                     </div>
                 }
                 <div className="Header-mainLogo">
+                    <img src={logoWhite} alt="Seahorse logo" />
                     <div className="Header-mainLogo_text">
                         <h2>Seahorse</h2>
-                        <h4>CONSULTING</h4> {/* czcionka - Poppins, Arimo, */}
+                        <h4>CONSULTING</h4> {/* czcionka - Poppins */}
                     </div>
                 </div>
             </div>
