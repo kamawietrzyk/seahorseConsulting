@@ -2,7 +2,7 @@
 @import '../../utils/colors.scss';
 
 .Header {
-    background: url('./seahorseBg.jpg') no-repeat center center;
+    background: url('./seahorseBg.jpg') no-repeat center center fixed;
     background-size: cover;
 
     &-navbar {

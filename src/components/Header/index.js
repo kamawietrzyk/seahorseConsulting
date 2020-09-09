@@ -21,10 +21,10 @@ class Header extends Component {
     handleScroll = () => {
         const { position } = this.state
         const scrollY = window.scrollY
-        if (scrollY >= 50 && !position) {
+        if (scrollY >= 45 && !position) {
             this.setState({ position: true })
 
-        } else if (scrollY < 50 && position) {
+        } else if (scrollY < 45 && position) {
             this.setState({ position: false })
         }
     };
