@@ -25,14 +25,14 @@
             padding: 1.5rem 1rem;
             margin-top: 1rem;
 
-            & h5 {
+            & h2 {
+                color: $paleBlue;
+            }
+
+            & h3 {
                 font-size: 2.3em;
                 margin-bottom: 1rem;
                 color: white;
-            }
-
-            & h4 {
-                color: $paleBlue;
             }
 
             & p {
@@ -42,6 +42,7 @@
             @media (min-width: $laptop) {
                 text-align: left;
                 padding: 2rem;
+                margin-bottom: 1rem;
 
                 & hr {
                     margin: 0 0 2rem 0;
@@ -69,7 +70,7 @@
                     height: 18rem;
                 }
 
-                @media (min-width: $laptop) {
+                @media (min-width: $desktop) {
                     width: 20rem;
                     height: 20rem;
                 }

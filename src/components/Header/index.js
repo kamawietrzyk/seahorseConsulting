@@ -21,10 +21,10 @@ class Header extends Component {
     handleScroll = () => {
         const { position } = this.state
         const scrollY = window.scrollY
-        if (scrollY >= 45 && !position) {
+        if (scrollY >= 40 && !position) {
             this.setState({ position: true })
 
-        } else if (scrollY < 45 && position) {
+        } else if (scrollY < 40 && position) {
             this.setState({ position: false })
         }
     };
@@ -94,8 +94,8 @@ class Header extends Component {
                 <div className="Header-mainLogo">
                     <img src={logoWhite} alt="Seahorse logo" />
                     <div className="Header-mainLogo_text">
-                        <h2>Seahorse</h2>
-                        <h4>CONSULTING</h4> {/* czcionka - Poppins */}
+                        <h1>Seahorse</h1>
+                        <h2>CONSULTING</h2>
                     </div>
                 </div>
             </div>
