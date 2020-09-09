@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Header from './components/Header';
 import Company from './components/Company';
 import About from './components/About';
+import References from './components/References';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div className="App-container">
         <Company />
         <About />
+        <References />
       </div>
     </div>
   );
