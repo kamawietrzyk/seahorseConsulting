@@ -1,0 +1,18 @@
+@import '../../utils/colors.scss';
+@import '../../utils/media.scss';
+
+.Company {
+    padding: 4rem 1rem 2rem 1rem;
+    margin-top: -1rem;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+
+    & h3 {
+        color: $darkBlue;
+    }
+
+    @media (min-width: $laptop) {
+        margin: 0 9rem;
+    }
+}
