@@ -1,12 +1,62 @@
+@import '../../utils/colors.scss';
+@import '../../utils/media.scss';
+
 .References {
     padding-top: 4rem;
-    margin-top: -2rem;
-    margin-bottom: 4rem;
+    margin-top: -1rem;
+    margin-bottom: 15rem;
 
     &-container {
         background: url('https://images.unsplash.com/photo-1547005327-ef75a6961556?ixlib=rb-1.2.1&auto=format&fit=crop&w=1588&q=80') no-repeat center 0%;
         width: 100%;
-        height: 38rem;
+        height: 28rem;
         background-size: auto;
+
+        &_carousel {
+
+            & .content {
+                color: white;
+                padding: 6rem 1.5rem 3rem 2rem;
+                display: grid;
+                height: 28rem;
+                margin-bottom: .5rem;
+                align-items: center;
+                text-align: right;
+                background-color: rgba(0,0,0,0.3);
+
+                & h4 {
+                    font-size: 18px;
+                }
+
+                & h5 {
+                    font-size: 27px;
+                    color: $paleBlue;
+
+                    & span {
+                        font-size: 24px;
+                    }
+                }
+
+                @media (min-width: $mobileL) {
+                    padding: 7rem 2rem 4rem 2rem;
+                }
+
+                @media (min-width: $tablet) {
+                    padding: 8rem 5rem 6rem 5rem;
+                    height: 29rem;
+                    margin-bottom: 0;
+                    background-color: transparent;
+                }
+
+                @media (min-width: $laptop) {
+                    padding-bottom: 8rem;
+                    padding-top: 10rem;
+                    height: 31rem;
+                }
+            }
+        }
+        @media (min-width: $laptop) {
+            height: 30rem;
+        }
     }
 }

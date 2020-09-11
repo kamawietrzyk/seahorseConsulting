@@ -5,6 +5,8 @@ import Header from './components/Header';
 import Company from './components/Company';
 import About from './components/About';
 import References from './components/References';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function App() {
   return (
