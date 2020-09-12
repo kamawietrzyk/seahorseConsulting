@@ -9,15 +9,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  h2, h3, h5 {
+  h1, h3, h5 {
     font-family: 'Playlist', serif;
   }
 
-  h4, a, p {
+  h2, h4, a, p {
     font-family: 'Poppins', sans-serif;
   }
 
-  h4 {
+  h2 {
     color: $prussianBlue;
     font-size: 1.75rem;
     margin-top: 1rem;

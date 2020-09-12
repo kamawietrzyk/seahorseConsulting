@@ -2,60 +2,91 @@
 @import '../../utils/colors.scss';
 
 .About {
-    padding: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas:
-    "text"
-    "pic";
+    margin: 4rem auto 2rem auto;
     background-color: $prussianBlue;
     border-radius: 7px;
+    width: 95%;
 
-    &-text {
-        grid-area: text;
+    &-container {
+        margin-top: -2rem;
+        padding: 1rem;
         display: grid;
-        justify-content: center;
-        text-align: center;
-        padding: 1.5rem 1rem;
-        margin-top: 1rem;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr auto;
+        grid-template-areas:
+            "text"
+            "pic";
 
-        & h5 {
-            font-size: 2.3em;
-            margin-bottom: 1rem;
-            color: white;
-        }
+        &_text {
+            grid-area: text;
+            display: grid;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            margin-top: 1rem;
 
-        & h4 {
-            color: $paleBlue;
-        }
+            & h2 {
+                color: $paleBlue;
+            }
 
-        & p {
-            color: rgba(255, 255, 255, .5);
-        }
+            & h3 {
+                font-size: 2.3em;
+                margin-bottom: 1rem;
+                color: white;
+            }
 
-        @media (min-width: $laptop) {
-            text-align: left;
-            padding: 2rem 3rem;
+            & p {
+                color: rgba(255, 255, 255, .5);
+            }
 
-            & hr {
-                margin: 0 0 2rem 0;
+            @media (min-width: $laptop) {
+                text-align: left;
+                padding: 2rem;
+                margin-bottom: 1rem;
+
+                & hr {
+                    margin: 0 0 2rem 0;
+                }
             }
         }
-    }
 
-    & img {
-        grid-area: pic;
-    }
+        &_pic {
+            grid-area: pic;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
 
-    @media (min-width: $laptop) {
-        margin: 2rem 1rem;
-        grid-template-columns: 1.5fr 1fr;
-        grid-template-rows: auto;
-        grid-column-gap: 2rem;
-        grid-template-areas:
-        "text pic";
+            & img {
+                display: block;
+                width: 16rem;
+                height: 16rem;
+                object-fit: cover;
+                border-radius: 50%;
+
+                @media (min-width: $mobileL) {
+                    width: 18rem;
+                    height: 18rem;
+                }
+
+                @media (min-width: $desktop) {
+                    width: 20rem;
+                    height: 20rem;
+                }
+            }
+
+            @media (min-width: $laptop) {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+        @media (min-width: $laptop) {
+            margin: 2rem 2rem 6rem 2rem;
+            grid-template-columns: 1.5fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "text pic";
+        }
     }
 }

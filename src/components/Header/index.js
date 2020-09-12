@@ -21,10 +21,10 @@ class Header extends Component {
     handleScroll = () => {
         const { position } = this.state
         const scrollY = window.scrollY
-        if (scrollY >= 45 && !position) {
+        if (scrollY >= 40 && !position) {
             this.setState({ position: true })
 
-        } else if (scrollY < 45 && position) {
+        } else if (scrollY < 40 && position) {
             this.setState({ position: false })
         }
     };
@@ -40,14 +40,14 @@ class Header extends Component {
             { name: "home", label: "HOME", to: "home" },
             { name: "company", label: "FIRMA", to: "company" },
             { name: "about", label: "O MNIE", to: "about" },
-            { name: "opinions", label: "OPINIE", to: "opinions" },
+            { name: "references", label: "OPINIE", to: "references" },
             { name: "contact", label: "KONTAKT", to: "contact" }
         ]
         return (
             <div className="Header" id="home">
                 <div className={`Header-navbar ${this.state.position && "white"} ${!this.state.position && this.state.navOpen && "dark"}`}>
                     <div className="Header-navbar__logo">
-                        <a href="#home">
+                        <a href=" ">
                             <img src={!this.state.position ? logoWhite : logoTeal} className={`${this.state.position && "dark"} ${this.state.navOpen && "nav-open"}`} alt="Seahorse logo małe" />
                         </a>
                     </div>
@@ -94,8 +94,8 @@ class Header extends Component {
                 <div className="Header-mainLogo">
                     <img src={logoWhite} alt="Seahorse logo" />
                     <div className="Header-mainLogo_text">
-                        <h2>Seahorse</h2>
-                        <h4>CONSULTING</h4> {/* czcionka - Poppins */}
+                        <h1>Seahorse</h1>
+                        <h2>CONSULTING</h2>
                     </div>
                 </div>
             </div>
