@@ -6,26 +6,26 @@ const Contact = () => (
         <div className="Contact-main">
             <h2>Kontakt</h2>
             <hr className="h-underline" />
-            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur? <br /> Vel illum qui dolorem eum fugiat quo voluptas!</p>
+            <p>Jesteś zainteresowany współpracą? Nie wahaj się ani chwili dłużej - wyślij do mnie swoją wiadomość. Zażółć gęślą jaźń, raz dwa trzy - to jest test polskich znaków typu ż, ź, ł, ó, ą, ę, ć, ś, ń... i tak dalej.<br /> Vel illum qui dolorem eum fugiat quo voluptas!</p>
             <div className="Contact-main_form">
                 <form>
                     <div class="form-group custom-div mb-0">
                         <div className="col1">
                             <label for="exampleInputName">*Imię i nazwisko</label>
-                            <input type="text" className="form-control" id="exampleInputName" required />
+                            <input type="text" className="form-control" name="sender" id="exampleInputName" required />
                         </div>
                         <div className="col2">
                             <label for="exampleInputEmail">*Twój e-mail</label>
-                            <input type="email" className="form-control" id="exampleInputEmail" aria-describedby="emailHelp" required />
+                            <input type="email" className="form-control" id="exampleInputEmail" name="email" aria-describedby="emailHelp" required />
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputSubject">Temat</label>
-                        <input type="text" className="form-control" id="exampleInputSubject" />
+                        <input type="text" className="form-control" name="subject" id="exampleInputSubject" />
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea">*Twoja wiadomość</label>
-                        <textarea className="form-control" id="exampleFormControlTextarea" rows="3" required></textarea>
+                        <textarea className="form-control" name="message" id="exampleFormControlTextarea" rows="3" required />
                     </div>
                     <button type="submit" className="btn">Wyślij</button>
                 </form>
