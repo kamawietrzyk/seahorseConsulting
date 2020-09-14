@@ -7,6 +7,7 @@ import About from './components/About';
 import References from './components/References';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Company />
         <About />
         <References />
+        <Contact />
       </div>
     </div>
   );
