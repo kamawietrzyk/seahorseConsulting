@@ -8,6 +8,7 @@ import References from './components/References';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <References />
         <Contact />
       </div>
+      <Footer />
     </div>
   );
 }
