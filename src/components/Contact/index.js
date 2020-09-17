@@ -6,7 +6,7 @@ const Contact = () => (
         <div className="Contact-main">
             <h2>Kontakt</h2>
             <hr className="h-underline" />
-            <p>Jesteś zainteresowany współpracą? Nie wahaj się ani chwili dłużej - wyślij do mnie swoją wiadomość. Zażółć gęślą jaźń, raz dwa trzy - to jest test polskich znaków typu ż, ź, ł, ó, ą, ę, ć, ś, ń... i tak dalej.<br /> Vel illum qui dolorem eum fugiat quo voluptas!</p>
+            <p>Jesteś zainteresowany współpracą? Nie wahaj się ani chwili dłużej - wyślij do mnie swoją wiadomość. Zażółć gęślą jaźń, raz dwa trzy - to jest test polskich znaków typu ż, ź, ł, ó, ą, ę, ć, ś, ń... i tak dalej. Vel illum qui dolorem eum fugiat quo voluptas!</p>
             <div className="Contact-main_form">
                 <form>
                     <div class="form-group custom-div mb-0">

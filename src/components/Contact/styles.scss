@@ -13,8 +13,13 @@
             color: $paleBlue;
         }
 
-        & p, label {
+        & p,
+        label {
             color: rgba(255, 255, 255, .5);
+        }
+
+        & p {
+            text-align: justify;
         }
 
         &_form {
@@ -27,7 +32,8 @@
             & .custom-div {
                 display: grid;
 
-                & .col1, .col2 {
+                & .col1,
+                .col2 {
                     margin-bottom: 1rem;
                 }
 
