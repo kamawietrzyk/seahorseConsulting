@@ -43,6 +43,7 @@ class Header extends Component {
             { name: "references", label: "OPINIE", to: "references" },
             { name: "contact", label: "KONTAKT", to: "contact" }
         ]
+
         return (
             <div className="Header" id="home">
                 <div className={`Header-navbar ${this.state.position && "white"} ${!this.state.position && this.state.navOpen && "dark"}`}>
