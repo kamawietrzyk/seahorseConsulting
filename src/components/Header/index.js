@@ -40,6 +40,7 @@ class Header extends Component {
             { name: "home", label: "HOME", to: "home" },
             { name: "company", label: "FIRMA", to: "company" },
             { name: "about", label: "O MNIE", to: "about" },
+            { name: "blog", label: "BLOG", to: "blog" },
             { name: "references", label: "OPINIE", to: "references" },
             { name: "contact", label: "KONTAKT", to: "contact" }
         ]

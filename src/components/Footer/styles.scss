@@ -3,59 +3,145 @@
 
 .Footer {
     width: 100%;
-    height: 6rem;
     background-color: $prussianBlue;
-    border-top: 1px solid $lightBlue;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    border-top: 1px solid rgba(255,255,255,.3);
 
-    &-logo {
-        display: flex;
-        color: rgba(255, 255, 255, .8);
+    &-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            "logo nav"
+            "icons nav";
+        align-items: center;
+        padding: 0 1rem 1rem 1rem;
 
-        &:hover {
-            text-decoration: none;
+        &_logo {
+            display: flex;
+            grid-area: logo;
             color: rgba(255, 255, 255, .8);
-        }
 
-        & .text {
-            display: grid;
-            align-content: center;
-            margin-left: .4rem;
-            text-align: center;
-
-            & h3 {
-                font-size: 1.7em;
-                margin-bottom: 0;
+            &:hover {
+                text-decoration: none;
+                color: rgba(255, 255, 255, .8);
             }
 
-            & h4 {
-                font-size: .5em;
-                letter-spacing: 2px;
-                margin-bottom: 0;
+            & .text {
+                display: grid;
+                align-content: center;
+                margin-left: .4rem;
+                text-align: center;
+
+                & h3 {
+                    font-size: 1.7em;
+                    margin-bottom: 0;
+                }
+
+                & h4 {
+                    font-size: .5em;
+                    letter-spacing: 2px;
+                    margin-bottom: 0;
+                }
+            }
+
+            & img {
+                width: 3rem;
             }
         }
 
-        & img {
-            width: 3.25rem;
+        & .navbar-nav {
+            grid-area: nav;
+            text-align: right;
+            margin-top: 1rem;
+
+            & .nav-link {
+                margin-right: .35rem;
+                margin-left: .35rem;
+                font-size: .8em;
+                color: rgba(255, 255, 255, .5);
+                cursor: pointer;
+                letter-spacing: 1px;
+                padding-bottom: 0;
+
+                &:hover {
+                    color: white;
+                }
+
+                @media (min-width: $tablet) {
+                    padding-bottom: .5rem;
+                }
+            }
+
+            @media (min-width: $tablet) {
+                flex-direction: row;
+                text-align: left;
+                margin-top: 0;
+                margin-right: 4rem;
+            }
+        }
+
+        &_icons {
+            display: flex;
+            justify-content: flex-start;
+            grid-area: icons;
+            align-self: flex-end;
+            margin-bottom: .5rem;
+
+            &__wrapper {
+                width: 1.2rem;
+                height: 1.2rem;
+                margin: 0 .25rem;
+                cursor: pointer;
+
+                & img {
+                    filter: invert(65%) sepia(0%) saturate(0%) hue-rotate(188deg) brightness(101%) contrast(92%);
+
+                    &:hover {
+                        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(188deg) brightness(101%) contrast(92%);
+                    }
+                }
+            }
+
+            @media (min-width: $tablet) {
+                justify-content: flex-end;
+                align-self: center;
+            }
+        }
+
+        @media (min-width: $tablet) {
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            height: 6rem;
+        }
+
+        @media (min-width: $desktopL) {
+            padding-left: 15vw;
+            padding-right: 15vw;
         }
     }
 
-    & .navbar-nav {
-        flex-direction: row;
+    &-copyrights {
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: .25rem;
 
-        & .nav-link {
-            margin-right: .35rem;
-            margin-left: .35rem;
-            font-size: .8em;
-            color: rgba(255, 255, 255, .5);
-            cursor: pointer;
-            letter-spacing: 1px;
+        & p {
+            color: rgba(255, 255, 255, .25);
+            font-size: 11px;
+        }
+        @media (min-width: $tablet) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
 
-            &:hover {
-                color: white;
-            }
+        @media (min-width: $laptop) {
+            padding-top: .5rem;
+        }
+
+        @media (min-width: $desktopL) {
+            padding-left: 15vw;
+            padding-right: 15vw;
         }
     }
 }

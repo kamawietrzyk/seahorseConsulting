@@ -9,32 +9,50 @@ const Footer = () => {
         { name: "home", label: "HOME", to: "home" },
         { name: "company", label: "FIRMA", to: "company" },
         { name: "about", label: "O MNIE", to: "about" },
+        { name: "blog", label: "BLOG", to: "blog" },
         { name: "references", label: "OPINIE", to: "references" },
         { name: "contact", label: "KONTAKT", to: "contact" }
     ]
 
+    const icons = [
+        { src: "https://image.flaticon.com/icons/svg/733/733605.svg", alt: "Facebook" },
+        { src: "https://image.flaticon.com/icons/svg/733/733614.svg", alt: "Instagram" }
+    ]
+
     return (
         <div className="Footer">
-            <a className="Footer-logo" href=" ">
-                <img src={logoWhite} alt="Stopka białe logo" />
-                <div className="text">
-                    <h3>Seahorse</h3>
-                    <h4>CONSULTING</h4>
+            <div className="Footer-container">
+                <a className="Footer-container_logo" href=" ">
+                    <img src={logoWhite} alt="Stopka białe logo" />
+                    <div className="text">
+                        <h3>Seahorse</h3>
+                        <h4>CONSULTING</h4>
+                    </div>
+                </a>
+                <div className="Footer-container_nav navbar-nav">
+                    {tabs.map(({ name, label, to }) => (
+                        <Link
+                            activeClass="active"
+                            key={name}
+                            to={to}
+                            spy={true}
+                            smooth={"easeInOutQuart"}
+                            duration={900}
+                            className={`nav-item nav-link`}>
+                            {label}
+                        </Link>
+                    ))}
                 </div>
-            </a>
-            <div className="Footer-nav navbar-nav">
-                {tabs.map(({ name, label, to }) => (
-                    <Link
-                        activeClass="active"
-                        key={name}
-                        to={to}
-                        spy={true}
-                        smooth={"easeInOutQuart"}
-                        duration={900}
-                        className={`nav-item nav-link`}>
-                        {label}
-                    </Link>
-                ))}
+                <div className="Footer-container_icons">
+                    {icons.map(({ src, alt }) => (
+                        <div className="Footer-container_icons__wrapper">
+                            <img src={src} alt={alt} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className="Footer-copyrights">
+                <p>Copyright © 2020 Kama Swoboda-Wietrzyk & Seahorse Consulting. All rights reserved.</p>
             </div>
         </div>
     )
