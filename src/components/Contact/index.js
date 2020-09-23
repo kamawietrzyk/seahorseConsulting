@@ -27,6 +27,10 @@ const Contact = () => (
                         <label htmlFor="exampleFormControlTextarea">*Twoja wiadomość</label>
                         <textarea className="form-control" name="message" id="exampleFormControlTextarea" rows="3" required />
                     </div>
+                    <div className="form-group rodo">
+                        <input type="checkbox" name="rodo" id="rodo" required />
+                        <label htmlFor="rodo"><small>*Wyrażam zgodę na przetwarzanie moich danych osobowych, na podstawie ogólnego Rozporządzenia o Ochronie Danych Osobowych z dnia 27 kwietnia 2016 r., przez Seahorse Consulting Joanna Kawalec, NIP: 886-25-31-596</small></label>
+                    </div>
                     <button type="submit" className="pageclip-form__submit">
                         <span>Wyślij</span>
                     </button>

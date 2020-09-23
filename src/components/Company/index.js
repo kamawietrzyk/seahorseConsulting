@@ -1,31 +1,34 @@
 import React from 'react';
 import './styles.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPoll, faUsers, faCopyright } from '@fortawesome/free-solid-svg-icons';
+import { faUsers, faCopyright, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Company = () => (
     <div className="Company" id="company">
         <div className="Company-main">
             <h2>Firma</h2>
             <hr className="h-underline" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-            <h3>Jakieś fajne motto!</h3>
+            <p>Konik morski – symbol bogatej wyobraźni oraz kreatywności, ale także siły i wytrwałości. Przez żeglarzy uważany był za symbol szczęścia. Stąd też stał się moim znakiem firmowym.</p>
+            <p>Kreatywność jest podstawowym i nieodłącznym elementem w tej branży – czy to w zakresie marketingu i PR, czy copywritingu. Jest bazą, na której buduję z Klientem naszą współpracę. Nieszablonowe pomysły na promocję marki przeobrażam w słowo pisane, dostosowane do wymogów świata on-line, prowadzę działania w mediach społecznościowych i projektuję strategię rozwoju.</p>
+            <p>Doświadczenie w wielu branżach pozwala mi na dostosowanie narzędzi do różnych projektów oraz na kreowanie tekstów mówiących językiem korzyści dla każdego Klienta.</p>
+            <h4>„Jeżeli koncepcja od samego początku nie jest szalona, nie ma dla niej żadnej nadziei.”</h4>
+            <h5>~ Albert Einstein</h5>
         </div>
         <div className="Company-grid">
             <div className="Company-grid_one">
-                <FontAwesomeIcon icon={faPoll} size="3x" />
-                <h4>Marketing</h4>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi.</p>
-            </div>
-            <div className="Company-grid_two">
-                <FontAwesomeIcon icon={faUsers} size="3x" />
-                <h4>PR</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-            </div>
-            <div className="Company-grid_three">
                 <FontAwesomeIcon icon={faCopyright} size="3x" />
                 <h4>Copyrighting</h4>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                <p>"Na początku było słowo...", czyli tworzenie tekstów na potrzeby reklamy i marketingu. Tekstów, które docierają do potencjalnych klientów, mówią językiem ich korzyści, dają odpowiedź na ich potrzeby i budują zaufanie do marki, a w konsekwencji zachęcają do skorzystania z usługi czy zakupu danego produktu. Wszystko ma swój początek w wartościowej treści reklamowej.</p>
+            </div>
+            <div className="Company-grid_two">
+                <FontAwesomeIcon icon={faFileAlt} size="3x" />
+                <h4>Tłumaczenia</h4>
+                <p>Tłumaczenie tekstów z i na język niemiecki – głównie z doświadczeniem w tekstach technicznych oraz marketingowych, jednakże zakres tematyczny tekstu źródłowego może być dowolny. Oprócz tłumaczeń pisemnych dostępna jest także opcja tłumaczeń ustnych.</p>
+            </div>
+            <div className="Company-grid_three">
+                <FontAwesomeIcon icon={faUsers} size="3x" />
+                <h4>PR</h4>
+                <p>Kreowanie wizerunku firmy, jej tożsamości oraz utrzymywanie stałego dialogu i kontaktu z otoczeniem, rozumiane także poprzez prowadzenie działań w mediach społecznościowych, które są aktualnie jednym z najważniejszych motorów napędzających pozyskiwanie klientów i aktywną sprzedaż.</p>
             </div>
         </div>
     </div>

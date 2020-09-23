@@ -55,6 +55,21 @@
                 }
             }
 
+            & .rodo {
+                display: flex;
+                justify-content: space-between;
+                line-height: 1.1;
+
+                & input {
+                    margin-top: .25rem;
+                }
+
+                & small {
+                    font-size: 12px;
+                    margin-left: .35rem;
+                }
+            }
+
             @media (min-width: $tablet) {
                 padding: 4rem;
             }

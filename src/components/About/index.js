@@ -8,7 +8,8 @@ const About = () => (
                 <h2>O mnie</h2>
                 <hr className="h-underline" />
                 <h3>Joanna Kawalec</h3>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+                <p>Z wykształcenia filolog germanista, z zamiłowania kobieta treściwa, czyli „ta od treści”. Wieloletnie doświadczenie w różnych dziedzinach pozwala mi na dostosowywanie słowa pisanego do danego języka branżowego, tak aby przemawiał do konkretnej grupy odbiorów, a nic mnie tak nie kręci, jak zabawa słowem właśnie.
+                Prywatnie żeglarka, chórzystka, górołaz, tancerka, psiara, kociara i kobieta szyjąca. Człowiek orkiestra, no i zawsze w terminie – w końcu „słowna” babka!</p>
             </div>
             <div className="About-container_pic">
                 <img src="https://images.unsplash.com/photo-1560510051-0a8471dcc293?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1033&q=80" alt="Łasica the boss" />

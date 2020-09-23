@@ -98,6 +98,7 @@ class Header extends Component {
                     <div className="Header-mainLogo_text">
                         <h1>Seahorse</h1>
                         <h2>CONSULTING</h2>
+                        <h3>Kreatywny copywriting dla ludzi z pasj<span className="font">ą</span>!</h3>
                     </div>
                 </div>
             </div>
