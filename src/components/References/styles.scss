@@ -22,7 +22,7 @@
                 margin-bottom: .5rem;
                 align-items: center;
                 text-align: right;
-                background-color: rgba(0,0,0,0.3);
+                background-color: rgba(0, 0, 0, 0.3);
 
                 & h4 {
                     font-size: 18px;
@@ -55,8 +55,15 @@
                 }
             }
         }
+
         @media (min-width: $laptop) {
             height: 30rem;
+        }
+
+        @media (min-width: $desktopL) {
+            margin-left: auto;
+            margin-right: auto;
+            width: 70vw;
         }
     }
 }
