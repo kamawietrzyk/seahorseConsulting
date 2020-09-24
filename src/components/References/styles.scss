@@ -53,6 +53,12 @@
                     padding-top: 10rem;
                     height: 31rem;
                 }
+
+                @media (min-width: $desktopL) {
+                    width: 60%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         }
 
@@ -63,7 +69,7 @@
         @media (min-width: $desktopL) {
             margin-left: auto;
             margin-right: auto;
-            width: 70vw;
+            width: 100%;
         }
     }
 }

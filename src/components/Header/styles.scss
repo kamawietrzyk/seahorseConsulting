@@ -169,18 +169,18 @@
 
     &-mainLogo {
         width: 100%;
-        height: 29rem;
+        height: 20rem;
         display: grid;
         align-items: baseline;
         justify-content: center;
         background-color: rgba(0, 0, 0, 0.2);
 
         @media (min-width: $tablet) {
-            height: 34rem;
+            height: 28rem;
         }
 
         @media (min-width: $laptop) {
-            height: 38rem;
+            height: 32rem;
         }
 
 
@@ -192,6 +192,8 @@
                 font-size: 4rem;
                 line-height: .9;
                 padding-top: 1rem;
+                color: white;
+                margin: 0;
 
                 @media (min-width: $tablet) {
                     font-size: 5.5rem;

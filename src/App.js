@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Blog from './components/Blog';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <div className="App-container">
         <Company />
         <About />
+        <Blog />
         <References />
         <Contact />
       </div>

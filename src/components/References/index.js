@@ -11,7 +11,7 @@ const References = () => {
         slidesToScroll: 1,
         pauseOnHover: true,
         arrows: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 7000,
         cssEase: "linear"
     }

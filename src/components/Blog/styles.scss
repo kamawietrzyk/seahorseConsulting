@@ -1,0 +1,142 @@
+@import '../../utils/colors.scss';
+@import '../../utils/media.scss';
+
+.Blog {
+    margin-top: -4rem;
+    padding-top: 4rem;
+    margin-bottom: 3rem;
+
+    & h2 {
+        text-align: center;
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3, auto);
+        grid-row-gap: 1rem;
+
+        &_box {
+            width: 95vw;
+            margin: 1rem auto;
+
+            & img {
+                width: 100%;
+                height: 14rem;
+                object-fit: cover;
+
+                @media (min-width: $tablet) {
+                    height: 24rem;
+                }
+
+                @media (min-width: $laptop) {
+                    height: 14rem;
+                }
+
+                @media (min-width: $desktop) {
+                    height: 18rem;
+                }
+
+                @media (min-width: $desktopL) {
+                    height: 21rem;
+                }
+            }
+
+            & .text {
+                background-color: #e4e5e791;
+                padding: 1.5rem 1rem;
+                height: 20rem;
+
+                & h4 {
+                    font-size: 1.5em;
+                    color: $prussianBlue;
+                    font-weight: 600;
+                    margin-bottom: .5rem;
+                }
+
+                & p.date {
+                    color: $darkBlue;
+                    font-size: .8em;
+                    margin: 0;
+                }
+
+                & p {
+                    margin-top: 1rem;
+                }
+
+                & a {
+                    font-family: 'Playlist', serif;
+                    color: $lightBlue;
+                    font-size: 22px;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                        color: $darkBlue;
+                        text-decoration: none;
+                    }
+
+                    & span {
+                        font-family: 'Playlist Ornament', serif;
+                        font-size: 30px;
+                        margin-left: 5px;
+                        margin-top: 3px;
+                    }
+                }
+
+                @media (min-width: $mobileM) {
+                    height: 19rem;
+                }
+
+                @media (min-width: $tablet) {
+                    height: 16rem;
+                }
+
+                @media (min-width: $laptop) {
+                    height: 20rem;
+                }
+
+                @media (min-width: $desktop) {
+                    height: 18rem;
+                    padding: 1.5rem 1rem;
+                }
+
+                @media (min-width: $desktopL) {
+                    padding: 2rem;
+                }
+            }
+
+            @media (min-width: $mobileL) {
+                width: 85vw;
+            }
+
+            @media (min-width: $tablet) {
+                width: 75vw;
+            }
+
+            @media (min-width: $laptop) {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: $laptop) {
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: auto;
+            grid-column-gap: 2rem;
+        }
+    }
+
+    @media (min-width: $tablet) {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    @media (min-width: $desktop) {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    @media (min-width: $desktopL) {
+        margin-left: 19vw;
+        margin-right: 19vw;
+    }
+}
