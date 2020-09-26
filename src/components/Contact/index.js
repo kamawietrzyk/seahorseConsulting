@@ -1,59 +1,138 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import './styles.scss';
 
-const Contact = () => {
+class Contact extends Component {
+    state = {
+        name: '',
+        email: '',
+        message: '',
+        rodo: true,
+        formErrors: { name: '', email: '', message: '' },
+        nameValid: false,
+        emailValid: false,
+        messageValid: false,
+        formValid: false,
+        messageSuccess: ''
+    }
 
-    const [ name, setName ] = useState('');
-    const [ email, setEmail ] = useState('');
-    const [ message, setMessage ] = useState('');
-    const [ rodo, setRodo ] = useState(false);
-    // const [ error, setError ] = useState(false);
+    handleSubmit = e => {
+        const { name, email, message, rodo } = this.state;
 
-    const handleSubmit = e => {
         e.preventDefault();
-        window.Pageclip.send("4XU6umLZPA1dXD4HI0fwOTMh0zH7FwUl", "SeahorseConsulting", { name, email, message, rodo }, (error, response) => {
-            console.log(error, response)
+        this.validateForm();
+        window.Pageclip.send("4XU6umLZPA1dXD4HI0fwOTMh0zH7FwUl", "SeahorseConsulting", { name, email, message, rodo }, (error) => {
+            if (!error) {
+                this.setState({ messageSuccess: 'success' });
+                this.resetForm();
+            } else {
+                this.setState({ messageSuccess: 'error' })
+            }
         })
     }
 
-    return (
-        <div className="Contact" id="contact">
-            <div className="Contact-main">
-                <h2>Kontakt</h2>
-                <hr className="h-underline" />
-                <p className="text-center">Jeżeli jesteś zainteresowana / zainteresowany współpracą, zapraszam do kontaktu!</p>
-                <div className="Contact-main_form">
-                    <form className="pageclip-form">
-                        <div className="form-group custom-div mb-0">
-                            <div className="col1">
-                                <label htmlFor="exampleInputName">*Imię i nazwisko</label>
-                                <input value={name} onChange={e => setName(e.target.value)} type="text" className="form-control" name="sender" id="exampleInputName" required />
+    validateField(fieldName, value) {
+        let fieldErrors = this.state.formErrors;
+        let nameValid = this.state.nameValid;
+        let emailValid = this.state.emailValid;
+        let messageValid = this.state.messageValid;
+
+        switch (fieldName) {
+            case 'name':
+                nameValid = value.length > 0;
+                fieldErrors.name = nameValid ? '' : "Uzupełnij imię i nazwisko!";
+                break;
+            case 'email':
+                emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+                fieldErrors.email = emailValid ? '' : 'Format e-maila jest nieprawidłowy!';
+                break;
+            case 'message':
+                messageValid = value.length > 0;
+                fieldErrors.message = messageValid ? '' : "Nie zapomnij wpisać treści..!";
+                break;
+            default:
+                break;
+        }
+        this.setState({
+            formErrors: fieldErrors,
+            nameValid: nameValid,
+            emailValid: emailValid,
+            messageValid: messageValid
+        }, this.validateForm());
+    }
+
+    validateForm() {
+        const { nameValid, emailValid, messageValid, rodo } = this.state;
+        this.setState({ formValid: nameValid && emailValid && messageValid && rodo });
+    }
+
+    resetForm = () => {
+        this.setState({
+            name: '',
+            email: '',
+            message: '',
+            rodo: false
+        })
+    }
+
+    handleInput = e => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({ [name]: value },
+            () => { this.validateField(name, value) })
+    }
+
+    render() {
+        const { name, email, message, rodo, messageSuccess, formErrors, formValid } = this.state
+        return (
+            <div className="Contact" id="contact">
+                <div className="Contact-main">
+                    <h2>Kontakt</h2>
+                    <hr className="h-underline" />
+                    <p className="text-center">Jeżeli jesteś zainteresowana / zainteresowany współpracą, zapraszam do kontaktu!</p>
+                    <div className="Contact-main_form">
+                        <form className="pageclip-form">
+                            <div className="form-group custom-div mb-0">
+                                <div className="col1">
+                                    <label htmlFor="exampleInputName">*Imię i nazwisko</label>
+                                    <input value={name} onChange={e => this.handleInput(e)} type="text" className="form-control" id="exampleInputName" name="name" aria-describedby="name" required />
+                                    <p className="text-danger" style={{ height: ".25rem", fontSize: "14px"  }}>{formErrors.name}</p>
+                                </div>
+                                <div className="col2">
+                                    <label htmlFor="exampleInputEmail">*Twój e-mail</label>
+                                    <input value={email} onChange={e => this.handleInput(e)} type="email" className="form-control" id="exampleInputEmail" name="email" aria-describedby="emailHelp" required />
+                                    <p className="text-danger" style={{ height: ".25rem", fontSize: "14px" }}>{formErrors.email}</p>
+                                </div>
                             </div>
-                            <div className="col2">
-                                <label htmlFor="exampleInputEmail">*Twój e-mail</label>
-                                <input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" id="exampleInputEmail" name="email" aria-describedby="emailHelp" required />
+                            <div className="form-group">
+                                <label htmlFor="exampleFormControlTextarea">*Twoja wiadomość</label>
+                                <textarea value={message} onChange={e => this.handleInput(e)} className="form-control" name="message" id="exampleFormControlTextarea" rows="3" required />
+                                <p className="text-danger" style={{ height: ".25rem", fontSize: "14px"  }}>{formErrors.message}</p>
                             </div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="exampleFormControlTextarea">*Twoja wiadomość</label>
-                            <textarea value={message} onChange={e => setMessage(e.target.value)} className="form-control" name="message" id="exampleFormControlTextarea" rows="3" required />
-                        </div>
-                        <div className="form-group rodo">
-                            <input type="checkbox" name="rodo" id="rodo" required />
-                            <label value={rodo} onChange={e => setRodo(e.target.value)} htmlFor="rodo"><small>*Wyrażam zgodę na przetwarzanie moich danych osobowych, na podstawie ogólnego Rozporządzenia o Ochronie Danych Osobowych z dnia 27 kwietnia 2016 r., przez Seahorse Consulting Joanna Kawalec, NIP: 886-25-31-596</small></label>
-                        </div>
-                        <button
-                        onClick={handleSubmit}
-                        type="submit"
-                        className="pageclip-form__submit"
-                        >
-                            <span>Wyślij</span>
-                        </button>
-                    </form>
+                            <div className="form-group rodo">
+                                <input type="checkbox" value={rodo} name="rodo" id="rodo" checked />
+                                <label htmlFor="rodo"><small>*Wyrażam zgodę na przetwarzanie moich danych osobowych, na podstawie ogólnego Rozporządzenia o Ochronie Danych Osobowych z dnia 27 kwietnia 2016 r., przez Seahorse Consulting Joanna Kawalec, NIP: 886-25-31-596</small></label>
+                                <p className="text-danger" style={{ height: ".25rem", fontSize: "14px" }}></p>
+                            </div>
+                            <div className={`${messageSuccess !== '' ? 'showInfo' : 'hideInfo'}`}>
+                                <p className={`${messageSuccess === 'success' && 'text-success'} ${messageSuccess === 'error' && 'text-danger'}`}>
+                                    {messageSuccess === 'success' && "Wiadomość została poprawnie wysłana!"}
+                                    {messageSuccess === 'error' && "Ups, coś poszło nie tak! Spróbuj ponownie później."}
+                                </p>
+                            </div>
+                            <button
+                                onClick={this.handleSubmit}
+                                type="submit"
+                                className="btn pageclip-form__submit"
+                                disabled={!formValid}
+                            >
+                                <span>Wyślij</span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default Contact
