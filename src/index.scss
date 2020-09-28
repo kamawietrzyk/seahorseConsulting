@@ -1,19 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins&display=swap');
 @import './utils/colors.scss';
 
 body {
   margin: 0;
   font-family: '-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue','
-    sans-serif;
+'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', '
+sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  h1, h3, h5 {
+  h1,
+  h3,
+  h5 {
     font-family: 'Playlist', serif;
   }
 
-  h2, h4, a, p, label, button {
+  h2,
+  h4,
+  a,
+  p,
+  label,
+  button {
     font-family: 'Poppins', sans-serif;
   }
 
@@ -21,6 +28,7 @@ body {
     color: $prussianBlue;
     font-size: 1.75rem;
     margin-top: 1rem;
+    font-weight: 600;
   }
 
   p {
@@ -34,6 +42,11 @@ body {
     width: 3rem;
     margin: 0 auto 2rem auto;
   }
+
+  .font {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+  }
 }
 
 code {
@@ -43,5 +56,10 @@ code {
 
 @font-face {
   font-family: 'Playlist';
-  src: local('Playlist'), url('./fonts/PlaylistScript.otf') format('opentype');
+  src: url('./fonts/PlaylistScript.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Playlist Ornament';
+  src: url('./fonts/PlaylistOrnament.otf') format('opentype');
 }

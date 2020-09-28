@@ -30,13 +30,19 @@
             }
 
             & h3 {
-                font-size: 2.3em;
+                font-size: 2.5em;
                 margin-bottom: 1rem;
                 color: white;
             }
 
             & p {
                 color: rgba(255, 255, 255, .5);
+                margin-top: .75rem;
+                text-align: justify;
+
+                @media (min-width: $laptop) {
+                    text-align: left;
+                }
             }
 
             @media (min-width: $laptop) {
@@ -93,7 +99,7 @@
         @media (min-width: $desktopL) {
             margin: 2rem auto 6rem auto;
             grid-template-columns: 2.5fr 1fr;
-            width: 72%;
+            width: 70%;
         }
     }
 }

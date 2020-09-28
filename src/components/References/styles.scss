@@ -29,11 +29,12 @@
                 }
 
                 & h5 {
-                    font-size: 27px;
+                    font-size: 30px;
                     color: $paleBlue;
 
                     & span {
-                        font-size: 24px;
+                        font-family: 'Poppins', serif;
+                        font-size: 14px;
                     }
                 }
 
@@ -53,6 +54,12 @@
                     padding-top: 10rem;
                     height: 31rem;
                 }
+
+                @media (min-width: $desktopL) {
+                    width: 60%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         }
 
@@ -63,7 +70,7 @@
         @media (min-width: $desktopL) {
             margin-left: auto;
             margin-right: auto;
-            width: 70vw;
+            width: 100%;
         }
     }
 }

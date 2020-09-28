@@ -11,7 +11,8 @@ const Footer = () => {
         { name: "about", label: "O MNIE", to: "about" },
         { name: "blog", label: "BLOG", to: "blog" },
         { name: "references", label: "OPINIE", to: "references" },
-        { name: "contact", label: "KONTAKT", to: "contact" }
+        { name: "contact", label: "KONTAKT", to: "contact" },
+        // { name: "privacy", label: "POLITYKA PRYWATNOŚCI", to: "/polityka-prywatności" }
     ]
 
     const icons = [
@@ -45,7 +46,7 @@ const Footer = () => {
                 </div>
                 <div className="Footer-container_icons">
                     {icons.map(({ src, alt }) => (
-                        <div className="Footer-container_icons__wrapper">
+                        <div key={alt} className="Footer-container_icons__wrapper">
                             <img src={src} alt={alt} />
                         </div>
                     ))}

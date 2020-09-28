@@ -41,10 +41,11 @@
                 }
             }
 
-            & button {
+            & .btn {
                 border-radius: 5px;
                 margin: 0 auto;
                 background-color: $paleBlue;
+                font-weight: 600;
                 color: white;
                 border: 1px solid white;
                 padding: .5rem 1.5rem;
@@ -52,6 +53,36 @@
 
                 &:hover {
                     background-color: $lightBlue;
+                }
+
+                &:focus {
+                    outline: 1px solid $lightBlue;
+                }
+            }
+
+            & .showInfo {
+                height: 2rem;
+                visibility: visible;
+            }
+
+            & .hideInfo {
+                height: 2rem;
+                visibility: hidden;
+            }
+
+            & .rodo {
+                display: flex;
+                justify-content: space-between;
+                line-height: 1.1;
+                margin-top: 2rem;
+
+                & input {
+                    margin-top: .25rem;
+                }
+
+                & small {
+                    font-size: 12px;
+                    margin-left: .35rem;
                 }
             }
 

@@ -12,14 +12,14 @@ const References = () => {
         pauseOnHover: true,
         arrows: false,
         autoplay: true,
-        autoplaySpeed: 7000,
+        autoplaySpeed: 8000,
         cssEase: "linear"
     }
 
     const references = [
-        {name: "Beata Kozidrak", company: "Bajm", text: "Łasica jest super! Świetnie się z nią pracuje, easy-going i w ogóle. Bierzcie ją wszyscy do współpracy, polecam! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."},
-        {name: "Freddie Mercury", company: "Queen", text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."},
-        {name: "Rysiek Riedel", company: "Dżem", text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."}
+        {name: "Paulina Przybylska", company: " właścicielka Stajni Wierzbna – Biały Las", text: "Pełen profesjonalizm i zaangażowanie w działania podejmowane w ramach współpracy, która – co najważniejsze - zaczyna się od dokładnego poznania potrzeb klienta oraz branży, w jakiej działa."},
+        {name: "Justyna Gnutek-Chudy", company: " właścicielka firmy Smart Work Sp. z o.o.", text: "Ogromna kreatywność w kształtowaniu wizerunku firmy – od stworzenia samej koncepcji, poprzez dopracowanie szczegółów każdego narzędzia, aż po działania promocyjne."},
+        {name: "Mateusz Ziemak", company: " właściciel firmy Studio PH", text: "Tłumaczenia wykonane profesjonalnie i w ustalonym terminie. Dzięki bliskiej współpracy wiem, że teksty są dopracowane, z dbałością o najmniejszy szczegół – zwłaszcza w zakresie języka branżowego."}
     ]
 
     return (
