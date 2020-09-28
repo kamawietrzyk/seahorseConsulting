@@ -6,7 +6,7 @@ class Contact extends Component {
         name: '',
         email: '',
         message: '',
-        rodo: true,
+        rodo: false,
         formErrors: { name: '', email: '', message: '' },
         nameValid: false,
         emailValid: false,
@@ -31,32 +31,29 @@ class Contact extends Component {
     }
 
     validateField(fieldName, value) {
-        let fieldErrors = this.state.formErrors;
-        let nameValid = this.state.nameValid;
-        let emailValid = this.state.emailValid;
-        let messageValid = this.state.messageValid;
+        let { formErrors, nameValid, emailValid, messageValid } = this.state
 
         switch (fieldName) {
             case 'name':
                 nameValid = value.length > 0;
-                fieldErrors.name = nameValid ? '' : "Uzupełnij imię i nazwisko!";
+                formErrors.name = nameValid ? '' : "Uzupełnij imię i nazwisko!";
                 break;
             case 'email':
                 emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-                fieldErrors.email = emailValid ? '' : 'Format e-maila jest nieprawidłowy!';
+                formErrors.email = emailValid ? '' : 'Format e-maila jest nieprawidłowy!';
                 break;
             case 'message':
                 messageValid = value.length > 0;
-                fieldErrors.message = messageValid ? '' : "Nie zapomnij wpisać treści..!";
+                formErrors.message = messageValid ? '' : "Nie zapomnij wpisać treści..!";
                 break;
             default:
                 break;
         }
         this.setState({
-            formErrors: fieldErrors,
-            nameValid: nameValid,
-            emailValid: emailValid,
-            messageValid: messageValid
+            formErrors,
+            nameValid,
+            emailValid,
+            messageValid,
         }, this.validateForm());
     }
 
@@ -69,8 +66,7 @@ class Contact extends Component {
         this.setState({
             name: '',
             email: '',
-            message: '',
-            rodo: false
+            message: ''
         })
     }
 
@@ -81,8 +77,35 @@ class Contact extends Component {
             () => { this.validateField(name, value) })
     }
 
+    handleRodo = e => {
+        const value = e.target.checked
+        console.log(e.target.checked);
+        this.setState({
+            rodo: value
+        },
+            () => { this.validateField('rodo', value) })
+    }
+
     render() {
         const { name, email, message, rodo, messageSuccess, formErrors, formValid } = this.state
+
+        if (messageSuccess === 'success' || messageSuccess === 'error') {
+            return (
+                <div className="Contact" id="contact">
+                    <div className="Contact-main">
+                        <h2>Kontakt</h2>
+                        <hr className="h-underline" />
+                        <p className="text-center">Jeżeli jesteś zainteresowana / zainteresowany współpracą, zapraszam do kontaktu!</p>
+                        <div className="Contact-main_form">
+                            <p className={`${messageSuccess === 'success' && 'text-success'} ${messageSuccess === 'error' && 'text-danger'}`} style={{ textAlign: 'center', marginTop: '1rem', fontSize: '1.25rem' }}>
+                                {messageSuccess === 'success' && "Wiadomość została poprawnie wysłana!"}
+                                {messageSuccess === 'error' && "Ups, coś poszło nie tak! Spróbuj ponownie później."}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
         return (
             <div className="Contact" id="contact">
                 <div className="Contact-main">
@@ -95,7 +118,7 @@ class Contact extends Component {
                                 <div className="col1">
                                     <label htmlFor="exampleInputName">*Imię i nazwisko</label>
                                     <input value={name} onChange={e => this.handleInput(e)} type="text" className="form-control" id="exampleInputName" name="name" aria-describedby="name" required />
-                                    <p className="text-danger" style={{ height: ".25rem", fontSize: "14px"  }}>{formErrors.name}</p>
+                                    <p className="text-danger" style={{ height: ".25rem", fontSize: "14px" }}>{formErrors.name}</p>
                                 </div>
                                 <div className="col2">
                                     <label htmlFor="exampleInputEmail">*Twój e-mail</label>
@@ -106,18 +129,12 @@ class Contact extends Component {
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlTextarea">*Twoja wiadomość</label>
                                 <textarea value={message} onChange={e => this.handleInput(e)} className="form-control" name="message" id="exampleFormControlTextarea" rows="3" required />
-                                <p className="text-danger" style={{ height: ".25rem", fontSize: "14px"  }}>{formErrors.message}</p>
+                                <p className="text-danger" style={{ height: ".25rem", fontSize: "14px" }}>{formErrors.message}</p>
                             </div>
                             <div className="form-group rodo">
-                                <input type="checkbox" value={rodo} name="rodo" id="rodo" checked />
-                                <label htmlFor="rodo"><small>*Wyrażam zgodę na przetwarzanie moich danych osobowych, na podstawie ogólnego Rozporządzenia o Ochronie Danych Osobowych z dnia 27 kwietnia 2016 r., przez Seahorse Consulting Joanna Kawalec, NIP: 886-25-31-596</small></label>
-                                <p className="text-danger" style={{ height: ".25rem", fontSize: "14px" }}></p>
-                            </div>
-                            <div className={`${messageSuccess !== '' ? 'showInfo' : 'hideInfo'}`}>
-                                <p className={`${messageSuccess === 'success' && 'text-success'} ${messageSuccess === 'error' && 'text-danger'}`}>
-                                    {messageSuccess === 'success' && "Wiadomość została poprawnie wysłana!"}
-                                    {messageSuccess === 'error' && "Ups, coś poszło nie tak! Spróbuj ponownie później."}
-                                </p>
+                                <input type="checkbox" onChange={this.handleRodo} value={rodo} name="rodo" id="rodo" checked={rodo} />
+                                <label htmlFor="rodo"><small>*Wyrażam zgodę na przetwarzanie moich danych osobowych, na podstawie ogólnego Rozporządzenia o Ochronie Danych Osobowych z dnia 27 kwietnia 2016 r., przez Seahorse Consulting Joanna Kawalec, NIP: 886-25-31-596</small>
+                                </label>
                             </div>
                             <button
                                 onClick={this.handleSubmit}
