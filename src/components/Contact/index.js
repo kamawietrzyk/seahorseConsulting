@@ -79,7 +79,6 @@ class Contact extends Component {
 
     handleRodo = e => {
         const value = e.target.checked
-        console.log(e.target.checked);
         this.setState({
             rodo: value
         },
@@ -118,18 +117,18 @@ class Contact extends Component {
                                 <div className="col1">
                                     <label htmlFor="exampleInputName">*Imię i nazwisko</label>
                                     <input value={name} onChange={e => this.handleInput(e)} type="text" className="form-control" id="exampleInputName" name="name" aria-describedby="name" required />
-                                    <p className="text-danger" style={{ height: ".25rem", fontSize: "14px" }}>{formErrors.name}</p>
+                                    <p className="text-danger" style={{ height: ".25rem", fontSize: "14px", marginTop: ".25rem" }}>{formErrors.name}</p>
                                 </div>
                                 <div className="col2">
                                     <label htmlFor="exampleInputEmail">*Twój e-mail</label>
                                     <input value={email} onChange={e => this.handleInput(e)} type="email" className="form-control" id="exampleInputEmail" name="email" aria-describedby="emailHelp" required />
-                                    <p className="text-danger" style={{ height: ".25rem", fontSize: "14px" }}>{formErrors.email}</p>
+                                    <p className="text-danger" style={{ height: ".25rem", fontSize: "14px", marginTop: ".25rem" }}>{formErrors.email}</p>
                                 </div>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlTextarea">*Twoja wiadomość</label>
                                 <textarea value={message} onChange={e => this.handleInput(e)} className="form-control" name="message" id="exampleFormControlTextarea" rows="3" required />
-                                <p className="text-danger" style={{ height: ".25rem", fontSize: "14px" }}>{formErrors.message}</p>
+                                <p className="text-danger" style={{ height: ".25rem", fontSize: "14px", marginTop: ".25rem" }}>{formErrors.message}</p>
                             </div>
                             <div className="form-group rodo">
                                 <input type="checkbox" onChange={this.handleRodo} value={rodo} name="rodo" id="rodo" checked={rodo} />

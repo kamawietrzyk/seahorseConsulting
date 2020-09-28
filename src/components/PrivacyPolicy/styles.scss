@@ -1,0 +1,19 @@
+@import '../../utils/colors.scss';
+@import '../../utils/media.scss';
+
+.PrivacyPolicy {
+    margin: 2rem;
+
+    &-icon {
+        color: $prussianBlue;
+    }
+
+    &-content {
+        text-align: center;
+
+        &_text {
+            margin: 3rem 0;
+            text-align: left;
+        }
+    }
+}

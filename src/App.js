@@ -1,26 +1,24 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.scss';
+import URLS from './utils/urls';
 import 'bootstrap/dist/css/bootstrap.css';
-import Header from './components/Header';
-import Company from './components/Company';
-import About from './components/About';
-import References from './components/References';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Contact from './components/Contact';
+import Header from './components/Header';
 import Footer from './components/Footer';
-import Blog from './components/Blog';
+import Home from './components/Home';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Header />
       <div className="App-container">
-        <Company />
-        <About />
-        <Blog />
-        <References />
-        <Contact />
+        <Switch>
+          <Route exact path={URLS.HOME} component={Home} />
+          <Route exact path={URLS.PRIVACY} component={PrivacyPolicy} />
+        </Switch>
       </div>
       <Footer />
     </div>
