@@ -3,24 +3,26 @@
 
 .Footer {
     width: 100%;
-    background: url('../Header/seahorseBg.jpg') no-repeat center 8% fixed;
+    background: url('../Header/seahorseBg.jpg') no-repeat center 6% fixed;
     background-size: cover;
-    border-top: 1px solid rgba(255,255,255,.3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
 
     &-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 4fr;
         grid-template-rows: repeat(2, auto);
         grid-template-areas:
             "logo nav"
             "icons nav";
         align-items: center;
-        padding: 0 1rem 1rem 1rem;
+        padding: 1.5rem 1rem 1rem 1rem;
 
         &_logo {
-            display: flex;
+            display: grid;
             grid-area: logo;
             color: white;
+            align-self: baseline;
+            justify-content: center;
 
             &:hover {
                 text-decoration: none;
@@ -28,13 +30,10 @@
             }
 
             & .text {
-                display: grid;
-                align-content: center;
-                margin-left: .4rem;
                 text-align: center;
 
                 & h3 {
-                    font-size: 1.7em;
+                    font-size: 2.2em;
                     margin-bottom: 0;
                 }
 
@@ -43,22 +42,39 @@
                     letter-spacing: 2px;
                     margin-bottom: 0;
                 }
+
+                @media (min-width: $laptop) {
+                    margin-top: .6rem;
+                    margin-left: .3rem;
+                }
             }
 
             & img {
-                width: 3rem;
+                width: 4rem;
+                margin: 0 auto .85rem auto;
+
+                @media (min-width: $tablet) {
+                    width: 3.5rem;
+                }
+
+                @media (min-width: $laptop) {
+                    margin: .5rem auto;
+                }
+            }
+
+            @media (min-width: $laptop) {
+                display: flex;
             }
         }
 
         & .navbar-nav {
             grid-area: nav;
             text-align: right;
-            margin-top: 1rem;
 
             & .nav-link {
                 margin-right: .35rem;
                 margin-left: .35rem;
-                font-size: .9em;
+                font-size: .8em;
                 font-weight: 600;
                 color: $prussianBlue;
                 cursor: pointer;
@@ -78,7 +94,11 @@
                 flex-direction: row;
                 text-align: left;
                 margin-top: 0;
-                margin-right: 4rem;
+                margin-right: .5rem;
+            }
+
+            @media (min-width: $laptop) {
+                margin-right: 7rem;
             }
         }
 
@@ -125,7 +145,7 @@
 
     &-copyrights {
         text-align: center;
-        padding-top: 1rem;
+        padding-top: .7rem;
         padding-bottom: .25rem;
 
         & p {
@@ -133,12 +153,15 @@
             font-size: 12px;
             font-weight: 500;
         }
+
         @media (min-width: $tablet) {
-            padding-left: 2rem;
-            padding-right: 2rem;
+            padding-left: 10rem;
+            padding-right: 10rem;
         }
 
         @media (min-width: $laptop) {
+            padding-left: 2rem;
+            padding-right: 2rem;
             padding-top: .5rem;
         }
 
