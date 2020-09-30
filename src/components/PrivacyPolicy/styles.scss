@@ -2,7 +2,7 @@
 @import '../../utils/media.scss';
 
 .PrivacyPolicy {
-    margin: 2rem;
+    margin: 1rem;
 
     &-icon {
         color: $prussianBlue;
@@ -29,5 +29,9 @@
                 margin-bottom: 1.25rem;
             }
         }
+    }
+
+    @media (min-width: $tablet) {
+        margin: 2rem;
     }
 }
