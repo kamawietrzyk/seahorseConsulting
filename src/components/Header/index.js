@@ -96,7 +96,9 @@ class Header extends Component {
                     </div>
                 }
                 <div className="Header-mainLogo">
-                    <img src={logoWhite} alt="Seahorse logo" />
+                    <RouterLink className="Header-mainLogo_link" to={URLS.HOME}>
+                        <img src={logoWhite} alt="Seahorse logo" />
+                    </RouterLink>
                     <div className="Header-mainLogo_text">
                         <h1>Seahorse</h1>
                         <h2>CONSULTING</h2>

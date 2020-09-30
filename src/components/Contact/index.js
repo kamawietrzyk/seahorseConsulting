@@ -132,8 +132,8 @@ class Contact extends Component {
                                 <textarea value={message} onChange={e => this.handleInput(e)} className="form-control" name="message" id="exampleFormControlTextarea" rows="3" required />
                                 <p className="text-danger" style={{ height: ".25rem", fontSize: "14px", marginTop: ".25rem" }}>{formErrors.message}</p>
                             </div>
-                            <div className="form-group rodo">
-                                <input type="checkbox" onChange={this.handleRodo} value={rodo} name="rodo" id="rodo" checked={rodo} />
+                            <div className="rodo custom-control custom-checkbox">
+                                <input className="custom-control-input" type="checkbox" onChange={this.handleRodo} value={rodo} name="rodo" id="rodo" checked={rodo} />
                                 <label htmlFor="rodo"><small>*Wyrażam zgodę na przetwarzanie moich danych osobowych, na podstawie ogólnego Rozporządzenia o Ochronie Danych Osobowych z dnia 27 kwietnia 2016 r., przez Seahorse Consulting Joanna Kawalec, NIP: 886-25-31-596</small>
                                 </label>
                             </div>

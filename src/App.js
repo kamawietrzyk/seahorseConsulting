@@ -13,14 +13,10 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <div className="App-container">
         <Switch>
           <Route exact path={URLS.HOME} component={Home} />
           <Route exact path={URLS.PRIVACY} component={PrivacyPolicy} />
         </Switch>
-      </div>
-      <Footer />
     </div>
   );
 }
