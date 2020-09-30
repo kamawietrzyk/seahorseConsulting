@@ -110,7 +110,9 @@ class Contact extends Component {
                 <div className="Contact-main">
                     <h2>Kontakt</h2>
                     <hr className="h-underline" />
-                    <p className="text-center">Jeżeli jesteś zainteresowana / zainteresowany współpracą, zapraszam do kontaktu!</p>
+                    <p className="text-center">Jeżeli jesteś zainteresowana / zainteresowany współpracą, zapraszam do kontaktu:</p>
+                    <p className="Contact-main_contact text-center"><strong>Joanna Kawalec - (+48) 518-320-349</strong></p>
+                    <p className="text-center">Możesz także skorzystać z poniższego formularza kontaktowego!</p>
                     <div className="Contact-main_form">
                         <form className="pageclip-form">
                             <div className="form-group custom-div mb-0">

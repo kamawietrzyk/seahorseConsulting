@@ -18,6 +18,12 @@
             color: rgba(255, 255, 255, .5);
         }
 
+        &_contact {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 18px;
+        }
+
         &_form {
             border: 3px solid $lightBlue;
             padding: 3rem 1rem;

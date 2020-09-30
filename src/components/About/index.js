@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.scss';
-import joanna from './joanna.jpg';
 
 const About = () => (
     <div className="About" id="about">
@@ -13,7 +12,7 @@ const About = () => (
                 Prywatnie żeglarka, chórzystka, górołaz, tancerka, psiara, kociara i kobieta szyjąca. Człowiek orkiestra, no i zawsze w terminie – w końcu „słowna” babka!</p>
             </div>
             <div className="About-container_pic">
-                <img src={joanna} alt="Łasica the boss" />
+                <img src="https://images.unsplash.com/photo-1501562146-c66d8ef18068?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Joanna Kawalec" />
             </div>
         </div>
     </div>
