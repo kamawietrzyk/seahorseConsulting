@@ -1,6 +1,6 @@
 const URLS = {
     HOME: '/',
-    PRIVACY: '/privacy-policy'
+    PRIVACY: '/polityka-prywatnosci'
 }
 
 export default URLS

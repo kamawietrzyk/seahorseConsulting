@@ -3,17 +3,23 @@ import About from './About';
 import Blog from './Blog';
 import Company from './Company';
 import Contact from './Contact';
+import Footer from './Footer';
+import Header from './Header';
 import References from './References';
 import ScrollToTop from './ScrollToTop';
 
 const Home = () => (
     <>
-        <ScrollToTop />
-        <Company />
-        <About />
-        <Blog />
-        <References />
-        <Contact />
+        <Header />
+        <div className="App-container">
+            <ScrollToTop />
+            <Company />
+            <About />
+            <Blog />
+            <References />
+            <Contact />
+        </div>
+        <Footer />
     </>
 )
 

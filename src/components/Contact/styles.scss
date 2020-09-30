@@ -86,13 +86,15 @@
                 line-height: 1.1;
                 margin-top: 2rem;
 
-                & input {
+                & .custom-control-input {
                     margin-top: .25rem;
+                    width: 20px;
+                    height: 20px;
+                    opacity: 1;
                 }
 
                 & small {
                     font-size: 12px;
-                    margin-left: .35rem;
                 }
             }
 
