@@ -2,8 +2,9 @@
 @import '../../utils/colors.scss';
 
 .Header {
-    background: url('./seahorseBg.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: url('./seahorseBg.jpg') center center fixed;
+    background-size: 100vw auto;
+    background-repeat: repeat;
 
     &-navbar {
         display: flex;
@@ -247,5 +248,10 @@
                 }
             }
         }
+    }
+
+    @media (min-width: $tablet) {
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 }
