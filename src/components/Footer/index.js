@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 import './styles.scss';
 import logoWhite from '../Header/logoWhite.png';
+import URLS from '../../utils/urls';
 
 const Footer = () => {
 
@@ -11,8 +13,7 @@ const Footer = () => {
         { name: "about", label: "O MNIE", to: "about" },
         { name: "blog", label: "BLOG", to: "blog" },
         { name: "references", label: "OPINIE", to: "references" },
-        { name: "contact", label: "KONTAKT", to: "contact" },
-        // { name: "privacy", label: "POLITYKA PRYWATNOŚCI", to: "/polityka-prywatności" }
+        { name: "contact", label: "KONTAKT", to: "contact" }
     ]
 
     const icons = [
@@ -43,6 +44,13 @@ const Footer = () => {
                             {label}
                         </Link>
                     ))}
+                    <RouterLink
+                            activeClass="active"
+                            key="privacy"
+                            to={URLS.PRIVACY}
+                            className={`nav-item nav-link`}>
+                            POLITYKA PRYWATNOŚCI
+                        </RouterLink>
                 </div>
                 <div className="Footer-container_icons">
                     {icons.map(({ src, alt }) => (
