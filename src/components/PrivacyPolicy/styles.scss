@@ -6,6 +6,11 @@
 
     &-icon {
         color: $prussianBlue;
+        cursor: pointer;
+
+        &:hover {
+            color: $darkBlue;
+        }
     }
 
     &-content {
@@ -14,6 +19,15 @@
         &_text {
             margin: 3rem 0;
             text-align: left;
+
+            & h4 {
+                margin-top: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            & p {
+                margin-bottom: 1.25rem;
+            }
         }
     }
 }
