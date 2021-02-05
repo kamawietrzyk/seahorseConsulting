@@ -45,11 +45,11 @@ const Footer = () => {
                         </Link>
                     ))}
                     <RouterLink
-                            activeClass="active"
-                            key="privacy"
-                            to={URLS.PRIVACY}
-                            className={`nav-item nav-link`}>
-                            POLITYKA PRYWATNOŚCI
+                        activeClass="active"
+                        key="privacy"
+                        to={URLS.PRIVACY}
+                        className={`nav-item nav-link`}>
+                        POLITYKA PRYWATNOŚCI
                         </RouterLink>
                 </div>
                 <div className="Footer-container_icons">
@@ -61,7 +61,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="Footer-copyrights">
-                <p>Copyright © 2020 Kama Swoboda-Wietrzyk & Seahorse Consulting. All rights reserved.</p>
+                <p>Copyright © 2021 Seahorse Consulting. All rights reserved.</p>
             </div>
         </div>
     )

@@ -19,7 +19,7 @@ const Company = () => (
             <div className="Company-grid">
                 <div className="Company-grid_one">
                     <FontAwesomeIcon icon={faCopyright} size="3x" />
-                    <h4>Copyrighting</h4>
+                    <h4>Copywriting</h4>
                     <p>"Na początku było słowo...", czyli tworzenie tekstów na potrzeby reklamy i marketingu. Tekstów, które docierają do potencjalnych klientów, mówią językiem ich korzyści, dają odpowiedź na ich potrzeby i budują zaufanie do marki, a w konsekwencji zachęcają do skorzystania z usługi czy zakupu danego produktu. Wszystko ma swój początek w wartościowej treści reklamowej.</p>
                 </div>
                 <div className="Company-grid_two">
