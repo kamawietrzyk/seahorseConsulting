@@ -1,6 +1,6 @@
 ## Seahorse Consulting
 
-Strona **Seahorse Consulting** powstała przy użyciu [Create React App](https://github.com/facebook/create-react-app) dla Joanny Kawalec - specjalistki od PR-u, tłumaczeń i copywrightingu.
+Strona **Seahorse Consulting** powstała przy użyciu [Create React App](https://github.com/facebook/create-react-app) dla Joanny Kawalec - specjalistki od PR-u, tłumaczeń i copywritingu.
 
 Jest dostępna pod adresem [seahorse-consulting.pl](https://seahorse-consulting.pl/)
 
