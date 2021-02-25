@@ -1,0 +1,33 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: yarn install
+    - run: yarn build
+    - name: S3 Sync
+      uses: ItsKarma/aws-cli@v1.70.0
+      with:
+        args: s3 sync --delete --acl public-read build/ s3://seahorse-consulting.pl/
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: "eu-central-1"
+    - run: "curl -X POST \"https://api.cloudflare.com/client/v4/zones/${{ secrets.CF_ZONE }}/purge_cache\" -H \"X-Auth-Email: ${{ secrets.CF_EMAIL }}\" -H \"X-Auth-Key: ${{ secrets.CF_API_KEY }}\" -H \"Content-Type: application/json\" --data '{\"purge_everything\":true}'"
