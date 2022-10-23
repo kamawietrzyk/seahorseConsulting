@@ -4,6 +4,8 @@ import { Link as RouterLink } from 'react-router-dom';
 import './styles.scss';
 import logoWhite from '../Header/logoWhite.png';
 import URLS from '../../utils/urls';
+import fbIcon from './fb.png'
+import igIcon from './ig.png'
 
 const Footer = () => {
 
@@ -17,8 +19,8 @@ const Footer = () => {
     ]
 
     const icons = [
-        { src: "https://image.flaticon.com/icons/svg/733/733605.svg", alt: "Facebook" },
-        { src: "https://image.flaticon.com/icons/svg/733/733614.svg", alt: "Instagram" }
+        { src: fbIcon, alt: "Facebook" },
+        { src: igIcon, alt: "Instagram" }
     ]
 
     return (
@@ -50,7 +52,7 @@ const Footer = () => {
                         to={URLS.PRIVACY}
                         className={`nav-item nav-link`}>
                         POLITYKA PRYWATNOŚCI
-                        </RouterLink>
+                    </RouterLink>
                 </div>
                 <div className="Footer-container_icons">
                     {icons.map(({ src, alt }) => (
@@ -61,7 +63,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="Footer-copyrights">
-                <p>Copyright © 2021 Seahorse Consulting. All rights reserved.</p>
+                <p>Copyright © 2022 Seahorse Consulting. All rights reserved.</p>
             </div>
         </div>
     )
