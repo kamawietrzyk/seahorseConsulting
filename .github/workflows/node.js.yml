@@ -23,9 +23,20 @@ jobs:
     - run: yarn install
     - run: yarn build
     - name: S3 Sync
-      uses: ItsKarma/aws-cli@v1.70.0
-      with:
-        args: s3 sync --delete --acl public-read build/ s3://seahorse-consulting.pl/
+      run: |
+          echo "----Get aws cli----"
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          echo "----Unzip----"
+          unzip awscliv2.zip
+          echo "----Install----"
+          sudo ./aws/install --update 
+          echo "----Check aws----"
+          aws --version
+          echo "----Configure----"
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set default.region ${{ secrets.AWS_REGION }}
+          s3 sync --delete --acl public-read build/ s3://seahorse-consulting.pl/
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
